@@ -1,4 +1,6 @@
-# easy start
+# 완전순열 제비뽑기
+
+### 간단 실행 명령어
 ```docker compose up -d```
 
 1. Nginx
