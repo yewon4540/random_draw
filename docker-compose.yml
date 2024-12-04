@@ -1,0 +1,67 @@
+services:
+  random_draw_web_1:
+    image: python:3.9-slim
+    #build:
+    #  context: ./v1
+    #  dockerfile: Dockerfile
+    container_name: random_draw
+    working_dir: /app
+    volumes:
+      - ./draw:/app
+    command: >
+      sh -c "pip install -r requirements.txt &&
+             python app.py"
+    ports:
+      - "5179:5179"  # Flask 앱 포트
+    networks:
+      - draw_network
+
+        #  random_draw_web_2:
+        #    depends_on:
+        #      - random_draw_web_1
+        #    image: python:3.9-slim
+        #    container_name: random_draw_2
+        #    working_dir: /app
+        #    volumes:
+        #      - ./v2:/app
+        #    command: >
+        #      sh -c "pip install -r requirements.txt &&
+        #             python app.py"
+        #    ports:
+        #      - "5180:5180"  # Flask 앱 포트
+        #    networks:
+        #      - draw_network
+
+        #random_draw_web_3:
+        #    depends_on:
+        #      - random_draw_web_2
+        #    image: python:3.9-slim
+        #    container_name: random_draw_3
+        #    working_dir: /app
+        #    volumes:
+        #      - ./v3:/app
+        #    command: >
+        #      sh -c "pip install -r requirements.txt &&
+        #             python app.py"
+        #    ports:
+        #      - "5181:5181"  # Flask 앱 포트
+        #    networks:
+        #      - draw_network
+
+  nginx:
+    #    depends_on:
+    #      - random_draw_web_2
+    image: nginx
+    container_name: web_server
+    volumes:
+      #- ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - "80:80"  # 외부 80번 포트 연결
+    networks:
+      - draw_network
+
+networks:
+  draw_network:
+    driver: bridge
+
