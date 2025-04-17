@@ -17,3 +17,7 @@
  - nginx config를 사전에 작성하여 volume으로 잡아둠.
  - 리버스 프록시만 사용함.
 
+4. deploy
+ - blue-green 배포 방식으로 채택
+ - sh를 통해 blue / green 컨테이너 존재 여부 파악 후 반대 색상 컨테이너 실행
+ - Jenkinsfile 참조
