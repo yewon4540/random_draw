@@ -31,3 +31,4 @@
     - git token
     - ssh key
  - 빌드 진행 : jenkins 빌드 확인
+ - 트리거 체크하기
