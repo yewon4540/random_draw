@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  draw_green:
+    image: python:3.9-slim
+    container_name: draw_green
+    working_dir: /app
+    volumes:
+      - ./draw:/app
+    command: >
+      sh -c "pip install -r requirements.txt &&
+             python app.py"
+    ports:
+      - "5180:5179"
+    networks:
+      - draw_network
+
+networks:
+  draw_network:
+    external: true

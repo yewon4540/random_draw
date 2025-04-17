@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: nginx
+    container_name: web_server
+    volumes:
+      - ./nginx.conf/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - "80:80"  # 외부 80번 포트 연결
+    networks:
+      - draw_network
+
+networks:
+  draw_network:
+    external: true
