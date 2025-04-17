@@ -6,10 +6,6 @@ pipeline {
     PROJECT_DIR = "/home/ubuntu/random_draw"
   }
 
-  triggers {
-    githubPush()
-  }
-
   stages {
     stage('Deploy to Flask Server') {
       steps {
