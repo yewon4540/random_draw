@@ -3,6 +3,7 @@ version: '3.8'
 services:
   draw_blue:
     image: python:3.9-slim
+    restart: unless-stopped
     container_name: draw_blue
     working_dir: /app
     volumes:
