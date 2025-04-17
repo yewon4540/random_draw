@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   environment {
-    FLASK_SERVER = "USER@HOST"
-    PROJECT_DIR = "PATH"
+    FLASK_SERVER = "ubuntu@172.31.41.38"
+    PROJECT_DIR = "/home/ubuntu/random_draw"
   }
 
   triggers {
