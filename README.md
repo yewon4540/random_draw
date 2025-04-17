@@ -21,3 +21,11 @@
  - blue-green 배포 방식으로 채택
  - sh를 통해 blue / green 컨테이너 존재 여부 파악 후 반대 색상 컨테이너 실행
  - Jenkinsfile 참조
+
+
+### 배포 방식
+ - git push 트리거를 인식
+ - github webhook을 통한 jenkins 트리거 작동
+ - jenkins 빌드 실행
+ - private ssh protocol을 세팅하여 ssh agent가 작동 가능토록 함 (credential)
+ - 빌드 진행
