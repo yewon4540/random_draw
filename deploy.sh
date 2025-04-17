@@ -38,7 +38,7 @@ HEALTH_OK=false
 for i in $(seq 1 10); do
   STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5179/health || true)
   if [ "$STATUS" = "200" ]; then
-    echo "✅ 헬스체크 성공! ($STATUS)"
+	  echo "✅ 헬스체크 성공! ;) ($STATUS)"
     HEALTH_OK=true
     break
   else
