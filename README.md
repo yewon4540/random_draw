@@ -27,5 +27,5 @@
  - git push 트리거를 인식
  - github webhook을 통한 jenkins 트리거 작동
  - jenkins 빌드 실행
- - private ssh protocol을 세팅하여 ssh agent가 작동 가능토록 함 (credential)
+ - private ssh protocol을 세팅하여 ssh agent가 작동 가능토록 함 (credential 사전 세팅)
  - 빌드 진행 : jenkins 빌드 확인
